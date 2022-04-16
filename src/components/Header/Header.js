@@ -43,7 +43,7 @@ const Header = () => {
 };
 
 const Wrapper = styled.header`
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.desktopAndUp} {
     display: flex;
     margin-bottom: 80px;
   }
@@ -54,7 +54,7 @@ const SuperHeader = styled.div`
   background: var(--color-gray-900);
   color: white;
 
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.desktopAndUp} {
     background: unset;
     color: var(--color-gray-900);
     flex: 1;
@@ -64,6 +64,12 @@ const SuperHeader = styled.div`
 const Row = styled(MaxWidthWrapper)`
   display: flex;
   justify-content: space-between;
+
+  @media ${QUERIES.desktopAndUp} {
+    justify-content: revert;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+  }
 `;
 
 const ActionGroup = styled.div`
@@ -81,7 +87,7 @@ const ActionGroup = styled.div`
 
 const ActionGroupSmall = styled(ActionGroup)`
   display: flex;
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.desktopAndUp} {
     display: none;
   }
 `;
@@ -92,7 +98,7 @@ const ActionGroupLarge = styled(ActionGroup)`
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.desktopAndUp} {
     display: flex;
   }
 `;
@@ -112,14 +118,14 @@ const MainHeader = styled(MaxWidthWrapper)`
   justify-content: center;
   margin-top: 32px;
   margin-bottom: 48px;
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.desktopAndUp} {
     display: none;
   }
 `;
 
 const ResponsiveHeader = styled(MainHeader)`
   display: none;
-  @media ${QUERIES.laptopAndUp} {
+  @media ${QUERIES.desktopAndUp} {
     display: flex;
     margin: 0;
   }
